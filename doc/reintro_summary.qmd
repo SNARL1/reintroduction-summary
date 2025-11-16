@@ -1,0 +1,6 @@
+---
+title: "Summary: Reintroductions of exposed/unexposed frogs and associated outcomes"
+author: "Roland A. Knapp"
+format: html
+editor: source
+---
