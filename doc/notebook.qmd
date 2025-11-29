@@ -1,0 +1,245 @@
+---
+title: "Reintroduction of exposed/unexposed frogs: summary"
+format: html
+editor: visual
+---
+
+This notebook provides a description of all frog reintroductions conducted to date that included both Bd-exposed and unexposed (control) frogs.
+
+*Rana muscosa*
+
+Upper Basin: 10475/10476/10477 to 10277/10285/10315 Reintroduction
+
+-   The 10277/10285/10315 recipient sites contained large Bd-naive *R. muscosa* populations until 2005, when a Bd epizootic began that eventually resulted in extirpatiion of all populations in the area.
+    At the time of this reintroduction, the 10475/10476/10477 source population contained a large Bd-naive *R. muscosa* population.
+
+-   In preparation for reintroductions to 10277/10285/10315, on 2013-07-01 we collected 100 adult *R. muscosa* from three lakes in Spur Basin (10475, 10476, 10477).
+    Frogs at all collection locations were Bd-naive.
+    Frogs were transferred to SNARL, divided into exposed and unexposed groups, and held in indoor tanks. 
+
+-   On 2013-07-20, Mary conducted the first Bd exposure of the frogs in the exposed group.
+    \[Details regarding Bd strains used, inoculation protocol, etc.?\]
+    All frogs were swabbed on day 5, 10, and 14 post-exposure.
+    Exposed frogs became infected but had low loads on all swabbing dates. 
+
+-   On 2013-07-21, all frogs \[or exposed frogs only?\]
+    were treated with itraconazole for seven days.
+    \[Details of treatment protocol?\]
+    Swabs collected on 2013-07-27 indicated that all frogs were Bd-negative.
+
+-   On 2013-07-30, Mary conducted the second Bd exposure of the frogs in the exposed group, and swabs were collected from all frogs on day 4 and day 11 post-exposure.
+    Frogs had low loads on day 4 and were all Bd-negative on day 11.
+
+-   Reasons for the low loads following both exposures were unknown, but one possibility is that conditions at SNARL (e.g., water chemistry, etc.) were not ideal for Bd growth.
+    Therefore, frogs were transferred to UCSB prior to a third attempt at infecting frogs.
+
+-   On 2013-08-17, Mary conducted the third Bd exposure of frogs in the exposed group.
+    All frogs were swabbed on days 5 and 10.
+    Bd loads were moderate on day 5 and low or zero on day 10.
+
+-   With no obvious path forward or means of maintaining frogs overwinter at UCSB, frogs were cleared of Bd with itracozole \[dates?\]
+    and prepared for reintroduction to three lakes in Upper and Pinchot Basins.
+
+-   On 2013-09-04, exposed and unexposed frogs were flown by helicopter into Kings Canyon National Park and reintroduced to three lakes (10277, 10285, 10315).
+    Each lake received 22 or 23 exposed frogs and 10 unexposed frogs.
+    Populations were monitored for at least two summers using CMR surveys.
+    Within three years, frogs in all three populations developed high Bd loads and declined to extirpation or near-extirpation.
+
+Sixty Lake Basin: 10418/10421/11069 to 10421 Reintroductions
+
+-   The 10421 recipient site (and adjacent sites) contained a large population of Bd-naive *R. muscosa* until 2007, when a Bd epizootic began.
+    Frogs were extirpated from this area by 2010.
+    At the time of the collections, the donor sites contained post-epizootic declining populations of *R. muscosa.*
+
+-   In preparation for reintroductions to 10421, we collected tadpoles from 10418, 10421, and 11069 on 2015-08-27.
+    Collected animals were reared at the SF and Oakland Zoos.
+
+-   On 2016-07-18, 48 adults were reintroduced to 10421 (34 exposed, 14 unexposed).
+
+-   On 2017-08-15, 25 adults were reintroduced to 10421 (16 exposed, 9 unexposed).
+
+-   CMR surveys of 10421 and adjacent 10420 and 10422 were conducted annually during 2016-2019.
+    The population declined rapidly following the reintroductions and no frogs were recaptured in 2019.
+    A total of 26 recaptures of reintroduced frogs were made, including 17 exposed frogs and 9 unexposed frogs.
+    Proportions of exposed and unexposed frogs reintroduced versus recaptured were similar.
+    Bd loads on recaptured frogs were high.
+
+Milestone Basin: 21078/21081 to 20196/20198/20199 Reintroductions
+
+-   The 20196/20198/20199 recipient sites are three adjacent lakes and ponds connected by streams.
+    These sites contained large *R. muscosa* populations until a Bd epizootic in 2004.
+    The populations declined to near-extirpation by 2008.
+    At the time of the collections for these reintroductions, the donor sites contained remnant post-epizootic, Bd-positive *R. muscosa* populations made up primarily of tadpoles as well as a small number of adults/subadults.
+
+-   On 2016-08-16, tadpoles were collected from 21078 and 21081 and reared at the SF and Oakland Zoos.
+
+-   On 2017-08-24, we conducted the following reintroductions:
+
+    -   20196: 67 adults from the SF and Oakland Zoos, including 44 exposed and 23 unexposed.
+    -   20198: 13 adults from the Oakland Zoo, including 9 exposed and 4 unexposed.
+    -   20199: 13 adults from the Oakland Zoo, including 9 exposed and 4 unexposed.
+
+-   On 2018-07-27, we conducted the following reintroductions:
+
+    -   20196: 22 adults from the SF and Oakland Zoos, including 16 exposed and 6 unexposed.
+    -   20198: 22 adults from the SF and Oakland Zoos, including 15 exposed and 7 unexposed.
+
+-   CMR surveys were conducted at all three recipient sites in 2018, 2019, 2020, 2021, 2022, and 2024.
+    At 20196, adults quickly developed high Bd loads, and the population was extirpated by 2020.
+    At 20198, most collected swabs were Bd-negative until 2021 when frogs developed high Bd loads.
+    The population was extirpated soon thereafter.
+    At 20199, only a few frogs were ever recaptured, and those frogs were either uninfected or had relatively low Bd loads.
+    Across all recaptured frogs, 80 were exposed and 38 were unexposed, and the proportions recaptured in each category mirrored the proportions introduced.
+
+Laurel Basin: 50783 to 20276 Reintroductions
+
+-   The 20276 recipient site contained a large Bd-naive *R. muscosa* population until a Bd epizootic in 2001.
+    The population was extirpated by 2004.
+    At the time of the collections for these reintroductions, the 50783 donor site contained a post-epizootic, Bd-positive, recovering *R. muscosa* population.
+    This population occupies a meadow stream and frogs do not have access to any lentic water bodies.
+
+-   On 2020-09-16 and 2021-08-09, we collected tadpoles from 50783 for rearing at the Oakland Zoo.
+
+-   On 2022-07-21, we reintroduced 73 adults to 20276 (35 exposed, 38 unexposed).
+
+-   On 2023-08-28, we reintroduced 69 adults to 20276 (34 exposed, 35 unexposed).
+
+-   CMR surveys were conducted in annually during 2022-2024 (2025 data are not yet in database).
+    A total of 43 adults were recaptured, including 22 exposed and 21 unexposed.
+    These proportions mirror the proportions of reintroduced frogs in the two categories.
+    Preliminary Bd load data indicates that Bd prevalence and load was zero or low until 2025, when both were high.
+
+Rocky Basin: 50783 to 50785 Reintroduction
+
+-   The 50785 recipient site contained a large *R. muscosa* population historically, which was likely extirpated following trout introductions in the early 1900s.
+    Bd history of the site is unknown.
+    At the time of the collections for these reintroductions, the 50783 donor site contained a post-epizootic, Bd-positive, recovering *R. muscosa* population.
+    This population occupies a meadow stream and frogs do not have access to any lentic water bodies.
+
+-   In preparation for reintroduction to 50785, on 2017-09-28, we collected *R. muscosa* tadpoles from 50783 for rearing at the Oakland Zoo.
+
+-   On 2019-07-16, we reintroduced 82 adults to 50785 (39 exposed, 43 unexposed).
+
+-   CMR surveys were conducted annual during 2019--2022.
+    During these surveys, a total of 56 reintroduced frogs were recaptured, including 22 exposed and 34 unexposed individuals.
+    This suggests that unexposed frogs were overrepresented compared to the proportions of frogs in each group that were reintroduced.
+    Frogs were Bd-negative in 2019 and developed very high Bd loads in 2020.
+    Only a single frogs was recaptured in 2021, indicating that the population had declined to near-extirpation.
+
+*Rana sierrae*
+
+Upper LeConte Basin: 10055/10206 to 10101/10102/11858 Reintroductions
+
+-   The 10101/10102/11858 recipient sites are three adjacent lakes and ponds connected by streams.
+    These sites contained a large Bd-naive *R. sierrae* population until a Bd epizootic in 2015.
+    The populations were extirpated by 2020.
+    At the time of the collections for this reintroduction, the 10055 donor population contained a large post-epizootic, Bd-positive, recovering *R. sierrae* population.
+    The year of Bd arrival in this donor population is unknown, but was prior to 1997.
+    The 10206 donor population experienced a Bd epizootic in 2005, but despite a severe population decline, the population persisted.
+    At the time of the collections, 10206 contained a post-epizootic, small, Bd-positive, persistent *R. sierrae* population
+
+-   In preparation for reintroductions to 10101/10102/11858, on 2020-07-16, tadpoles were collected from 10206.
+    On 2021-08-11, tadpoles were collected forn 10055, a Bd-positive recovering *R. sierrae* population.
+    On 2022-08-19, tadpoles were collected from 10206 and 10055.
+    All collected animals were reared at the SF Zoo.
+
+-   On 2022-07-21, 74 adults (36 exposed, 38 unexposed) were reintroduced to 10102.
+
+-   On 2023-08-28, a total of 76 adults were released to 10101, 10102, and 11858.
+    25 adults were reintroduced to 10101 (10 exposed, 15 unexposed), 25 adults were reintroduced to 10102 (13 exposed, 12 unexposed), and 26 adults were reintroduced to 11858 (12 exposed, 14 unexposed).
+
+-   CMR surveys were conducted in 2022, 2023, and 2024.
+    During these surveys, only 2 frogs from the reintroduced cohorts were ever recaptured.
+    Severe winter of 2022-2023 may have contributed to low survivorship.
+
+Goddard Basin: 10037/10055 to 10109/10114 Reintroductions
+
+-   The 10109/10114 recipient sites are two lakes in adjacent sub-basins.
+    The history of R.
+    sierrae and Bd at the sites is unknown, but we assume that both sites harbored *R. sierrae* historically and that these populations were extirpated following a Bd epizootic prior to 1997.
+    At the time of the collections for this reintroduction, the 10037 and 10055 donor populations contained small (10037) and large (10055) post-epizootic, Bd-positive, recovering *R. sierrae* populations.
+    The year of Bd arrival in these donor population is unknown, but was prior to 1997.
+
+-   On 2020-08-20, tadpoles were collected from 10037.
+    On 2021-08-11 and 2022-08-19, tadpoles were collected from 10055.
+    Tadpoles from all three collections were reared at the SF Zoo.
+    10037 and 10055 contain Bd-positive recovering *R. sierrae* populations.
+
+-   On 2022-07-21, 76 adults were reintroduced to 10109 (38 exposed, 38 unexposed) and 68 adults were reintroduced to 10114 (33 exposed, 33 unexposed).
+    Frogs reintroduced to 10109 came from the 2020 collection from 10037 and the 2021 collection from 10055.
+    Frogs reintroduced to 10114 came from the 2021 collection from 10055.
+
+-   On 2023-08-28, 58 adults were reintroduced to 10109 (27 exposed, 31 unexposed) and 58 adults were reintroduced to 10114 (33 exposed, 25 unexposed).
+    All reintroduced frogs came from the 2022 collection from 10055.
+
+-   CMR surveys were conducted at 10109 and 10114 in 2023 and 2024 (2025 results not yet in database).
+    None of the frogs from these reintroductions were ever recaptured.
+    Severe winter of 2022-2023 may have contributed to low survivorship.
+
+Humphreys Basin: 54188 to 50183 Reintroductions
+
+-   The 50183 recipient site contained a Bd-naive *R. sierrae* population until 2010, when a Bd epizootic started and quickly extirpated this population.
+    The 54188 recipient site contains a post-epizootic, Bd-positive, recovering *R. sierrae* population.
+    The year of Bd arrival at this site and how the *R. sierrae* population was affected are unknown, except that the Bd arrival year was prior to 1995.
+
+-   In preparation for these reintroductions, we collected tadpoles from 54188 on 2020-09-16 and 2021-09-06 for rearing at the Oakland Zoo.
+
+-   On 2022-09-16, we reintroduced 12 adults to 50183 (6 exposed, 6 unexposed).
+
+-   On 2023-09-09, we reintroduced 28 adults to 50183 (14 exposed, 14 unexposed).
+
+-   CMR surveys were conducted in 2023 and 2024 (2025 data are not yet in database).
+    A total of 18 adults were recaptured, including 14 exposed and 4 unexposed individuals.
+    Preliminary Bd load data indicates that prevalence and load were zero to low.
+
+Desolation: 84221 to 84235 Reintroductions
+
+-   The history of *R. sierrae* and Bd at the 84235 recipient site is unknown, but we assume that it harbored *R. sierrae* historically and that the population was extirpated following trout introductions in the late 1800s or early 1900s.
+    No information is available regarding the year of Bd arrival at this site.
+    At the time of the collections for these reintroductions, the 84221 donor site contained a large, post-epizootic, recovering *R. sierrae* population.
+    The year of Bd arrival at this donor site and its impact on the *R. sierrae* population is unknown.
+
+-   On 2013-06-21, we collected 200(?) eggs from 84221.
+    On 2013-07-25, we caught 24 + ??
+    metamorphs at 84221 for rearing at the SF Zoo.
+    On 2014-06-20, we collected 200 eggs from 84221 for rearing at the SF Zoo.
+    On 2014-08-07, we caught 50 metamorphs at 84221 for rearing at the SF Zoo.
+
+-   On 2014-06-16, 35 zoo-reared adults were reintroduced to 84235 (20 Bd-exposed, 15 unexposed).
+    Frogs were from 2013-07-25 collection.
+
+-   On 2015-06-15, 35 zoo-reared adults were reintroduced to 84235 (20 exposed, 15 unexposed).
+    Frogs were from 2013-06-21 collection.
+
+-   On 2016-07-12, ??
+    zoo-reared frogs adults were reintroduced to 84235 (?? exposed, ?? unexposed).
+    Due to mix-up at the zoo, it is unknown what frogs were released at 84235 versus 84313 (see below).
+    However, a total of 63 frogs were released to the two lakes, including 41 exposed and 22 unexposed.
+    Database indicates that frogs were from 2014-08-07 collection, but must have also included some from 2013-06-21 collection.
+
+-   \[Need Bd loads on frogs during Bd-exposures at the zoo.\]
+
+-   CMR surveys conducted during 2014-2020.
+    Population was extant throughout the period, with decent numbers of recaptures.
+    Bd loads on captured frogs were typically in low to moderate range.
+
+Desolation: 84221 to 84313 Reintroductions
+
+-   The history of *R. sierrae* and Bd at the 84313 recipient site is unknown, but we assume that it harbored *R. sierrae* historically and that the population was extirpated following trout introductions in the late 1800s or early 1900s.
+    No information is available regarding the year of Bd arrival at this site.
+    At the time of the collections for these reintroductions, the 84221 donor site contained a large, post-epizootic, recovering *R. sierrae* population.
+    The year of Bd arrival at this donor site and its impact on the *R. sierrae* population is unknown.
+
+-   See 84235 reintroduction (above) for frog collection and captive rearing information.
+
+-   On 2015-06-15, 62 zoo-reared adult *R. sierrae* were released at 84313 (38 exposed, 24 unexposed).
+
+-   On 2016-07-12, ??
+    zoo-reared adults were released at 84313 (?? exposed, ?? unexposed).
+    Due to a mix-up at the zoo, it is unknown what frogs were released at 84235 versus 84313.
+    However, a total of 63 frogs were released to the two lakes, including 41 exposed and 22 unexposed.
+    Database indicates that frogs were from 2014-08-07 collection, but must have also included some from 2013-06-21 collection.
+
+-   CMR surveys conducted during 2015-2019.
+    Population was extant throughout period with low numbers of recaptures.
+    Bd loads on captured frogs were typically in low to moderate range.

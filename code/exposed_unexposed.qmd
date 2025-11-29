@@ -1,45 +1,44 @@
 ---
 title: "Summary: Reintroductions of exposed/unexposed frogs and associated outcomes"
 author: "Roland A. Knapp"
-format: html:
-  toc: true
+format: 
+  html:
+    toc: true
+df-print: kable
 ---
 
-## Load packages
+## Setup
 
 ```{r}
+#| eval: true
+#| output: false
+#| code-fold: true
+#| code-summary: "Setup code"
+
+# Install packages from remote - if necessary
+remotes::install_github("SNARL1/pgutils")
+
+# Load installed packages
 if (!require(librarian)){
   install.packages("librarian")
   library(librarian)
 }
-librarian::shelf(DBI, config, here, readr, connections, dplyr, tidyr, stringr, magrittr, lubridate)
-```
-
-## Connect to database
-
--   Before running this code chunk, establish connection to database server (via VPN or SSH)
-
-```{r}
-# Select configuration of database of interest (connection paramaters for all databases provided in config.yml - in working directory)
-Sys.setenv(R_CONFIG_ACTIVE = "amphibians-eri")
-
-# Using connection_open from connections package shows structure of database tables in Connections pane
-con <- connection_open(RPostgres::Postgres(),
-                       dbname = config::get("dbname"),
-                       host = config::get("host"),
-                       port = config::get("port"),
-                       user = config::get("user"),
-                       password = rstudioapi::askForPassword("password")) # Enter password from password manager ("ERI GRIT Postgres")
-
-# Set search path to schema of interest
-dbExecute(con, "SET search_path TO public")
+librarian::shelf(here, readr, dplyr, tidyr, stringr, magrittr, lubridate)
 ```
 
 ## Retrieve data subsets from PostgreSQL database
 
-### Reintroduction data
+Before running the following code chunk, connect to database server via SSH or VPN. Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive [rocess to connect to database. There, database connection chunk is set to "eval: false" and saved CSV are read in. 
 
 ```{r}
+#| eval: false
+#| output: false
+#| code-fold: true
+#| code-summary: "Reintroduction information"
+
+# Reintroduction data
+con <- pgutils::connect_to_pg()
+
 relocate <- tbl(con, "relocate") %>%
   rename(
     relocate_comment = comment,
@@ -55,6 +54,8 @@ relocate_frog <- tbl(con, "relocate_frog") %>%
 reintroduction <- relocate %>%
   inner_join(relocate_frog, by = "relocate_id") %>%
     select(
+    zoo, 
+    collect_date, 
     release_siteid1,
     release_date,
     type,
@@ -68,33 +69,75 @@ reintroduction <- relocate %>%
     relocate_frog_comment
   ) %>%
   collect()
-```
 
-## Disconnect from database
+reintroduction %>% write_csv(here("data", "reintroduction.csv"))
 
-```{r db_disconnect}
-connection_close(con) 
+# Create species column
+site <- tbl(con, "site") %>%
+  rename(site_id = id) %>% 
+  left_join(reintroduction, join_by(site_id == release_siteid1)) %>% 
+  mutate(
+    species = if_else(
+      str_detect(drainage, "kings_sf|kern"),
+      "ramu",
+      "rasi"
+    )
+  )
+              
+
+
+connections::connection_close(con) 
 rm(con)
 ```
 
 ## Bd exposure history
 
 ```{r}
+#| eval: true
+#| output: true
+#| code-fold: true
+#| code-summary: "Bd exposure history for reintroduced cohorts"
+
+reintroduction <- read_csv(here("data", "reintroduction.csv"))
+
 exposed_unexposed <- reintroduction %>%
 filter(!(bd_exposure == "")) %>% 
 group_by(release_siteid1, release_date, bd_exposure) %>%
   summarise(n_frogs = n(), .groups = "drop") %>%
-  pivot_wider(
+pivot_wider(
     names_from = bd_exposure,
     values_from = n_frogs,
     values_fill = 0
   ) %>%
   # Keep only rows with at least one exposed AND one unexposed
-  filter(exposed > 0, unexposed > 0)
+filter(exposed > 0, unexposed > 0) %>% 
+arrange(release_siteid1, release_date)
+
+knitr::kable(exposed_unexposed)
 ```
 
--   Check on 2024 exposed-unexposed data. Not in database.
--   Issues with all exposed-reintroductions by site-date.
+-   Check on 2024 exposed-unexposed data. Not in database?
+-   Identify issues with all exposed-unexposed reintroductions by site-date.
     -   Roland takes \< 2019, Tom takes \>= 2019
 -   Zoo swabs from pre-reintroduction frogs.
 -   Sources of information: zoo personnel, Cherie's lab, MLRG qPCR Google Doc, Vredenburg lab, MLRG qPCR database
+
+## Information for table
+
+- R. muscosa or R. sierrae
+- Zoo
+- Source population type (Bd-naive, persisting, recovering)
+- Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range). 
+- Any Bd positives in unexposed group?
+- Release date
+- Sample sizes of exposed and unexposed groups
+- Number of frogs recaptured during first 2 years
+- Bd load during first 2 years post-release for exposed and unexposed frogs (median, range)
+- Reintroduction outcome: epizootic/extirpation, enzootic/extirpation, enzootic/establishment
+
+## Create table describing each reintroduced cohort
+
+```{r}
+
+```
+
