@@ -28,7 +28,7 @@ librarian::shelf(here, readr, dplyr, tidyr, stringr, magrittr, lubridate)
 
 ## Retrieve data subsets from PostgreSQL database
 
-Before running the following code chunk, connect to database server via SSH or VPN. Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive [rocess to connect to database. There, database connection chunk is set to "eval: false" and saved CSV are read in. 
+Before running the following code chunk, connect to database server via SSH or VPN. Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive \[rocess to connect to database. There, database connection chunk is set to "eval: false" and saved CSV are read in.
 
 ```{r}
 #| eval: false
@@ -124,20 +124,22 @@ knitr::kable(exposed_unexposed)
 
 ## Information for table
 
-- R. muscosa or R. sierrae
-- Zoo
-- Source population type (Bd-naive, persisting, recovering)
-- Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range). 
-- Any Bd positives in unexposed group?
-- Release date
-- Sample sizes of exposed and unexposed groups
-- Number of frogs recaptured during first 2 years
-- Bd load during first 2 years post-release for exposed and unexposed frogs (median, range)
-- Reintroduction outcome: epizootic/extirpation, enzootic/extirpation, enzootic/establishment
+-   Release site ID and basin name
+-   R. muscosa or R. sierrae
+-   Zoo
+-   Source population type (Bd-naive, persisting, recovering)
+-   Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range).
+-   Bd isolates
+-   Any Bd positives in unexposed group?
+-   Release date
+-   Sample sizes of exposed and unexposed groups
+-   Number of frogs recaptured during first 2 years
+-   Bd load during first 2 years post-release for exposed and unexposed frogs (median, range)
+-   Reintroduction outcome: epizootic/extirpation, enzootic/extirpation, enzootic/establishment
+-   Other frog treatments that may have occurred at zoo (e.g. brumation)
 
 ## Create table describing each reintroduced cohort
 
 ```{r}
 
 ```
-
