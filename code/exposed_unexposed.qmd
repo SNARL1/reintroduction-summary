@@ -28,7 +28,8 @@ librarian::shelf(here, readr, dplyr, tidyr, stringr, magrittr, lubridate)
 
 ## Retrieve data subsets from PostgreSQL database
 
-Before running the following code chunk, connect to database server via SSH or VPN. Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive [rocess to connect to database. There, database connection chunk is set to "eval: false" and saved CSV are read in. 
+- Before running the following code chunk, connect to database server via SSH or VPN. 
+- Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive process to connect to database. Therefore, database connection chunk is set to "eval: false" and saved CSV are read in during rendering. 
 
 ```{r}
 #| eval: false
@@ -70,27 +71,33 @@ reintroduction <- relocate %>%
   ) %>%
   collect()
 
-reintroduction %>% write_csv(here("data", "reintroduction.csv"))
-
 # Create species column
 site <- tbl(con, "site") %>%
   rename(site_id = id) %>% 
-  left_join(reintroduction, join_by(site_id == release_siteid1)) %>% 
+  select(site_id,
+         drainage
+  ) %>% 
+  collect()
+
+reintroduction <- reintroduction %>% 
+  left_join(site, join_by(release_siteid1 == site_id)) %>% 
   mutate(
     species = if_else(
       str_detect(drainage, "kings_sf|kern"),
       "ramu",
       "rasi"
-    )
-  )
-              
+    ) 
+  ) %>% 
+  select(-drainage)
 
+reintroduction %>% write_csv(here("data", "reintroduction.csv"))
 
 connections::connection_close(con) 
-rm(con)
+
+rm(con, relocate, relocate_frog, site)
 ```
 
-## Bd exposure history
+## Bd exposure history table
 
 ```{r}
 #| eval: true
@@ -102,18 +109,19 @@ reintroduction <- read_csv(here("data", "reintroduction.csv"))
 
 exposed_unexposed <- reintroduction %>%
 filter(!(bd_exposure == "")) %>% 
-group_by(release_siteid1, release_date, bd_exposure) %>%
+group_by(release_siteid1, species, zoo, release_date, bd_exposure) %>%
   summarise(n_frogs = n(), .groups = "drop") %>%
 pivot_wider(
     names_from = bd_exposure,
     values_from = n_frogs,
     values_fill = 0
   ) %>%
-  # Keep only rows with at least one exposed AND one unexposed
+# Keep only rows with at least one exposed AND one unexposed (12 reintroduced cohorts only included unexposed)
 filter(exposed > 0, unexposed > 0) %>% 
+mutate(zoo = replace_na(zoo, "ucsb")) %>% 
 arrange(release_siteid1, release_date)
 
-knitr::kable(exposed_unexposed)
+# knitr::kable(exposed_unexposed)
 ```
 
 -   Check on 2024 exposed-unexposed data. Not in database?
@@ -124,11 +132,11 @@ knitr::kable(exposed_unexposed)
 
 ## Information for table
 
-- R. muscosa or R. sierrae
-- Zoo
+- x R. muscosa or R. sierrae
+- x Zoo
 - Source population type (Bd-naive, persisting, recovering)
 - Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range). 
-- Any Bd positives in unexposed group?
+- Any Bd positives in unexposed group? Maybe describe as prevalence?
 - Release date
 - Sample sizes of exposed and unexposed groups
 - Number of frogs recaptured during first 2 years
