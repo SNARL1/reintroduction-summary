@@ -28,9 +28,8 @@ librarian::shelf(here, readr, dplyr, tidyr, stringr, magrittr, lubridate)
 
 ## Retrieve data subsets from PostgreSQL database
 
-- Before running the following code chunk, connect to database server via SSH or VPN. 
-- Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive process to connect to database. Therefore, database connection chunk is set to "eval: false" and saved CSV are read in during rendering. 
-
+-   Before running the following code chunk, connect to database server via SSH or VPN.
+-   Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive process to connect to database. Therefore, database connection chunk is set to "eval: false" and saved CSV are read in during rendering.
 
 ```{r}
 #| eval: false
@@ -40,6 +39,13 @@ librarian::shelf(here, readr, dplyr, tidyr, stringr, magrittr, lubridate)
 
 # Reintroduction data
 con <- pgutils::connect_to_pg()
+
+site <- tbl(con, "site") %>%
+  rename(site_id = id) %>% 
+  select(site_id,
+         drainage
+  ) %>% 
+  collect()
 
 relocate <- tbl(con, "relocate") %>%
   rename(
@@ -72,15 +78,68 @@ reintroduction <- relocate %>%
   ) %>%
   collect()
 
-# Create species column
-site <- tbl(con, "site") %>%
-  rename(site_id = id) %>% 
-  select(site_id,
-         drainage
-  ) %>% 
-  collect()
+site %>% write_csv(here("data", "site.csv"))
+reintroduction %>% write_csv(here("data", "reintroduction.csv"))
 
-reintroduction <- reintroduction %>% 
+connections::connection_close(con) 
+
+rm(con, relocate, relocate_frog, site)
+```
+
+## Create table describing each reintroduced cohort - for review of what cohorts to include in analysis
+
+Information to include in table
+
+-   Release site ID and basin name (avoid revealing location information
+
+-   public repo)
+
+-   Species (R. muscosa or R. sierrae)
+
+-   Zoo
+
+-   Source population type (naive, epizootic, persisting, recovering)
+
+-   Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range).
+
+-   Bd isolates - Any Bd positives in unexposed group?
+
+-   Release date
+
+-   Sample sizes of exposed and unexposed groups
+
+-   Number of frogs recaptured during first 2 years
+
+-   Bd load during first 2 years post-release for exposed and unexposed frogs (median, range)
+
+-   Reintroduction outcome: epizootic/extirpation, enzootic/extirpation, enzootic/establishment
+
+-   Other frog treatments that may have occurred at zoo (e.g. brumation)
+
+```{r}
+#| eval: true
+#| output: true
+#| code-fold: true
+#| code-summary: "Bd exposure history for reintroduced cohorts"
+
+reintroduction <- read_csv(here("data", "reintroduction.csv"))
+site <- read_csv(here("data", "site.csv"))
+
+exposed_unexposed <- reintroduction %>%
+filter(!(bd_exposure == "")) %>% 
+group_by(release_siteid1, zoo, release_date, bd_exposure) %>%
+  summarise(n_frogs = n(), .groups = "drop") %>%
+pivot_wider(
+    names_from = bd_exposure,
+    values_from = n_frogs,
+    values_fill = 0
+  ) %>%
+filter(exposed > 0, unexposed > 0) %>% # 12 reintroduced cohorts included only unexposed frogs
+mutate(zoo = replace_na(zoo, "ucsb")) %>% 
+arrange(release_siteid1, release_date)
+
+# Add species column
+exposed_unexposed <- exposed_unexposed %>% 
   left_join(site, join_by(release_siteid1 == site_id)) %>% 
   mutate(
     species = if_else(
@@ -91,53 +150,28 @@ reintroduction <- reintroduction %>%
   ) %>% 
   select(-drainage)
 
-reintroduction %>% write_csv(here("data", "reintroduction.csv"))
+# add status of each source population
+- create list of each reintroduced cohort and associated source populations
+- assign status to each source population (naive, epizootic, persisting, recovering)
+- add to table using pivot_wider followed by concatenate to create single column containing comma-separated values
+  
 
-connections::connection_close(con) 
-
-rm(con, relocate, relocate_frog, site)
-```
-
-## Bd exposure history table
-
-```{r}
-#| eval: true
-#| output: true
-#| code-fold: true
-#| code-summary: "Bd exposure history for reintroduced cohorts"
-
-reintroduction <- read_csv(here("data", "reintroduction.csv"))
-
-exposed_unexposed <- reintroduction %>%
-filter(!(bd_exposure == "")) %>% 
-group_by(release_siteid1, species, zoo, release_date, bd_exposure) %>%
-  summarise(n_frogs = n(), .groups = "drop") %>%
-pivot_wider(
-    names_from = bd_exposure,
-    values_from = n_frogs,
-    values_fill = 0
-  ) %>%
-# Keep only rows with at least one exposed AND one unexposed (12 reintroduced cohorts only included unexposed)
-filter(exposed > 0, unexposed > 0) %>% 
-mutate(zoo = replace_na(zoo, "ucsb")) %>% 
-arrange(release_siteid1, release_date)
 
 # knitr::kable(exposed_unexposed)
 ```
 
-## To-do list: 
+## To-do list:
 
--   Check on 2024 exposed-unexposed data. Not in database?
-
--   Identify issues with all exposed-unexposed reintroductions by site-date.
+-   Identify issues with all exposed-unexposed reintroductions by site-date (see notebook.qmd).
 
     -   \- Roland takes \< 2019, Tom takes \>= 2019
 
--   Zoo swabs from pre-reintroduction frogs.
+-   Zoo swabs from pre-reintroduction frogs: where are these data stored?
+    How are the data structured?
 
 -   Sources of information: zoo personnel, Cherie's lab, MLRG qPCR Google Doc, Vredenburg lab, MLRG qPCR database
 
-### Site assignments: 
+### Site assignments:
 
 -   Milestone Basin: 21078/21081 to 20196/20198/20199 Reintroductions (RK)
 
@@ -159,23 +193,7 @@ arrange(release_siteid1, release_date)
 
 -   Humphreys Basin: 54188 to 50183 Reintroductions (TS)
 
-## Information for table
-
--   Release site ID and basin name
--   R. muscosa or R. sierrae
--   Zoo
--   Source population type (Bd-naive, persisting, recovering)
--   Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range).
--   Bd isolates
--   Any Bd positives in unexposed group?
--   Release date
--   Sample sizes of exposed and unexposed groups
--   Number of frogs recaptured during first 2 years
--   Bd load during first 2 years post-release for exposed and unexposed frogs (median, range)
--   Reintroduction outcome: epizootic/extirpation, enzootic/extirpation, enzootic/establishment
--   Other frog treatments that may have occurred at zoo (e.g. brumation)
-
-## Create table describing each reintroduced cohort
+## Create dataset of reintroduced frogs and relevant characteristics - for analysis
 
 ```{r}
 
