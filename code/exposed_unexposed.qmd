@@ -31,6 +31,7 @@ librarian::shelf(here, readr, dplyr, tidyr, stringr, magrittr, lubridate)
 - Before running the following code chunk, connect to database server via SSH or VPN. 
 - Tables are saved as CSV files to allow rendering of QMD. Rendering fails during interactive process to connect to database. Therefore, database connection chunk is set to "eval: false" and saved CSV are read in during rendering. 
 
+
 ```{r}
 #| eval: false
 #| output: false
@@ -124,28 +125,58 @@ arrange(release_siteid1, release_date)
 # knitr::kable(exposed_unexposed)
 ```
 
+## To-do list: 
+
 -   Check on 2024 exposed-unexposed data. Not in database?
+
 -   Identify issues with all exposed-unexposed reintroductions by site-date.
-    -   Roland takes \< 2019, Tom takes \>= 2019
+
+    -   \- Roland takes \< 2019, Tom takes \>= 2019
+
 -   Zoo swabs from pre-reintroduction frogs.
+
 -   Sources of information: zoo personnel, Cherie's lab, MLRG qPCR Google Doc, Vredenburg lab, MLRG qPCR database
+
+### Site assignments: 
+
+-   Milestone Basin: 21078/21081 to 20196/20198/20199 Reintroductions (RK)
+
+-   Sixty Lake Basin: 10418/10421/11069 to 10421 Reintroductions (RK)
+
+-   Upper Basin: 10475/10476/10477 to 10277/10285/10315 Reintroduction (RK)
+
+-   Desolation: 84221 to 84313 Reintroductions (RK)
+
+-   Desolation: 84221 to 84235 Reintroductions (RK)
+
+-   Rocky Basin: 50783 to 50785 Reintroduction (TS)
+
+-   Laurel Basin: 50783 to 20276 Reintroductions (TS)
+
+-   Upper LeConte Basin: 10055/10206 to 10101/10102/11858 Reintroductions (TS)
+
+-   Goddard Basin: 10037/10055 to 10109/10114 Reintroductions (TS)
+
+-   Humphreys Basin: 54188 to 50183 Reintroductions (TS)
 
 ## Information for table
 
-- x R. muscosa or R. sierrae
-- x Zoo
-- Source population type (Bd-naive, persisting, recovering)
-- Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range). 
-- Any Bd positives in unexposed group? Maybe describe as prevalence?
-- Release date
-- Sample sizes of exposed and unexposed groups
-- Number of frogs recaptured during first 2 years
-- Bd load during first 2 years post-release for exposed and unexposed frogs (median, range)
-- Reintroduction outcome: epizootic/extirpation, enzootic/extirpation, enzootic/establishment
+-   Release site ID and basin name
+-   R. muscosa or R. sierrae
+-   Zoo
+-   Source population type (Bd-naive, persisting, recovering)
+-   Bd load at end of zoo Bd exposure for exposed and unexposed frogs (median, range).
+-   Bd isolates
+-   Any Bd positives in unexposed group?
+-   Release date
+-   Sample sizes of exposed and unexposed groups
+-   Number of frogs recaptured during first 2 years
+-   Bd load during first 2 years post-release for exposed and unexposed frogs (median, range)
+-   Reintroduction outcome: epizootic/extirpation, enzootic/extirpation, enzootic/establishment
+-   Other frog treatments that may have occurred at zoo (e.g. brumation)
 
 ## Create table describing each reintroduced cohort
 
 ```{r}
 
 ```
-
